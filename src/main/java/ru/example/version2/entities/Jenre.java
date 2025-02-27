@@ -1,22 +1,18 @@
 package ru.example.version2.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-//import lombok.Builder;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.UUID;
 @Getter
 @Setter
-//@Builder
 @Entity
-public class Author {
+@Table(name="jenres")
+public class Jenre {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)//автоматически генерирует ключ перед сохранением в БД
     private UUID id;
-    private  String fullname;
+    private  String name;
 
 }

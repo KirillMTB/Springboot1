@@ -1,8 +1,8 @@
 package ru.example.version2.entities;
 import jakarta.persistence.*;
-//import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 import java.util.UUID;
@@ -10,15 +10,21 @@ import java.util.UUID;
 
 @Getter
 @Setter
-//@Builder
+@ToString
 @Entity
-public class Category {
+public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)//автоматически генерирует ключ перед сохранением в БД
     private UUID id;
-    private String name;
+    private String title;
+    @ManyToMany
+    private List<Jenre> jenres;
+    @ManyToOne
+    @JoinColumn(name="director_id")
+    private Director director;
+    @Column(name="publish_year")
+    private Integer year;
 
-    //@OneToMany можно или так или как в Букс
-    //private List<Book> books;
+
+
 }
-
