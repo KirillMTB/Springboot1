@@ -8,7 +8,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name="jenres")
+
 public class Jenre {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)//автоматически генерирует ключ перед сохранением в БД

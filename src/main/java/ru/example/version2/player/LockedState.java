@@ -20,7 +20,7 @@ public class LockedState extends State {
     @Override
     public String onPlay() {
         player.changeState(new ReadyState(player));
-        return "Ready";
+        return "Play Большой Куш";
     }
 
     @Override

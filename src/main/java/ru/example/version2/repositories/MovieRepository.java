@@ -9,6 +9,5 @@ import ru.example.version2.entities.Movie;
 import java.util.UUID;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, UUID> {
-    @Query(value = "SELECT COUNT (b) FROM Movie b WHERE b.director.id = :directorId")
-    int countMoviesByDirector(@Param("directorId")UUID directorID);
+
 }
